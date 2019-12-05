@@ -1,6 +1,5 @@
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\NUnit3.TestAdapter.dll
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\NUnit3.TestAdapter.pdb
-C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\nunit.engine.netstandard.dll
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\Deployment-Configuration-Example.Tests.deps.json
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\Deployment-Configuration-Example.Tests.runtimeconfig.json
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\Deployment-Configuration-Example.Tests.runtimeconfig.dev.json
@@ -90,3 +89,6 @@ C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-E
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\obj\Debug\netcoreapp3.0\Deployment-Configuration-Example.Tests.csproj.CopyComplete
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\obj\Debug\netcoreapp3.0\Deployment-Configuration-Example.Tests.dll
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\obj\Debug\netcoreapp3.0\Deployment-Configuration-Example.Tests.pdb
+C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\nunit.engine.dll
+C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\nunit.engine.api.dll
+C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\NuGet.Frameworks.dll
