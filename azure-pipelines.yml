@@ -21,8 +21,6 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VisualStudioTestPlatformInstaller@1
-
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
