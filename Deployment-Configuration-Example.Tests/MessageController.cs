@@ -34,6 +34,7 @@ namespace Deployment_Configuration_Example.Tests
             //// Assert
             //Assert.AreEqual("This is a test", response);
 
+            Assert.Pass();
 
         }
     }
