@@ -30,7 +30,8 @@ namespace Deployment_Configuration_Example.Controllers
             return new
             {
                 message = message,
-                connectionString = connectionString
+                connectionString = connectionString, 
+                lastUpdated = DateTime.Now.ToUniversalTime()
             };
         }
     }
