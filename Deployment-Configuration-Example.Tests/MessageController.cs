@@ -1,7 +1,5 @@
 using NUnit.Framework;
-using Deployment_Configuration_Example.Controllers;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Configuration;
+
 
 namespace Deployment_Configuration_Example.Tests
 {
