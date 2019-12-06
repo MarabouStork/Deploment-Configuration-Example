@@ -1438,6 +1438,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "Deployment-Configuration-Example/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Deployment-Configuration-Example.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Deployment-Configuration-Example.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -5250,10 +5263,19 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "Deployment-Configuration-Example/1.0.0": {
+      "type": "project",
+      "path": "../Deployment-Configuration-Example/Deployment-Configuration-Example.csproj",
+      "msbuildProject": "../Deployment-Configuration-Example/Deployment-Configuration-Example.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+<<<<<<< HEAD
+=======
+      "Deployment-Configuration-Example >= 1.0.0",
+>>>>>>> e2b0792e548b3866dac1b32b82e97c71594afd3b
       "Microsoft.NET.Test.Sdk >= 16.2.0",
       "NUnit3TestAdapter >= 3.13.0",
       "nunit >= 3.12.0"
@@ -5289,7 +5311,11 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\_src\\maraboustork\\Deployment-Configuration-Example\\Deployment-Configuration-Example\\Deployment-Configuration-Example.csproj": {
+              "projectPath": "C:\\_src\\maraboustork\\Deployment-Configuration-Example\\Deployment-Configuration-Example\\Deployment-Configuration-Example.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5325,6 +5351,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
