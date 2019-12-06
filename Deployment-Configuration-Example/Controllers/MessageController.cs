@@ -26,22 +26,12 @@ namespace Deployment_Configuration_Example.Controllers
             var connectionString = _config
                                         .GetSection("ANestedSetting")
                                         .GetValue<String>("DatabaseConnection");
-
-            var substitutedValue = _config
-                                        .GetSection("SomethingVeryNested")
-                                        .GetSection("DeeperStill")
-                                        .GetSection("OKThatsEnough")
-                                        .GetValue<String>("ASubstitutedValue");
               
             return new
             {
                 message = message,
-                connectionString = connectionString, 
-                substitutedValue = substitutedValue
+                connectionString = connectionString
             };
-
-
-            // return _config.GetValue<String>("TheMessage");
         }
     }
 
