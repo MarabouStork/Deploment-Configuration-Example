@@ -19,9 +19,30 @@ namespace Deployment_Configuration_Example.Controllers
         }
 
         [HttpGet]
-        public String Get()
+        public Object Get()
         {
-            return _config.GetValue<String>("TheMessage");
+            var message = _config.GetValue<String>("TheMessage");
+
+            var connectionString = _config
+                                        .GetSection("ANestedSetting")
+                                        .GetValue<String>("DatabaseConnection");
+
+            var substitutedValue = _config
+                                        .GetSection("SomethingVeryNested")
+                                        .GetSection("DeeperStill")
+                                        .GetSection("OKThatsEnough")
+                                        .GetValue<String>("ASubstitutedValue");
+              
+            return new
+            {
+                message = message,
+                connectionString = connectionString, 
+                substitutedValue = substitutedValue
+            };
+
+
+            // return _config.GetValue<String>("TheMessage");
         }
     }
+
 }
