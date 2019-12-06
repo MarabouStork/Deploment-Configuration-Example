@@ -1,7 +1,6 @@
 using NUnit.Framework;
 using Deployment_Configuration_Example.Controllers;
 using Microsoft.Extensions.Logging;
-using Moq;
 using Microsoft.Extensions.Configuration;
 
 namespace Deployment_Configuration_Example.Tests
@@ -21,7 +20,7 @@ namespace Deployment_Configuration_Example.Tests
         }
 
         [Test]
-        public void Test1()
+        public void Get_ToTestStandardMessageResponse_RespondsWithMockedMessage()
         {
             //// Arrange
             //_config.Setup(c => c.GetSection("TheMessage")).Returns(_configSection.Object);
