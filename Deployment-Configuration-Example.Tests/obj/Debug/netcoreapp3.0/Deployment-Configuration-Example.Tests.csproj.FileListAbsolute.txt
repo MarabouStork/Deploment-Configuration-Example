@@ -97,3 +97,6 @@ C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-E
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\Deployment-Configuration-Example.Tests.pdb
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\nunit.engine.dll
 C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\nunit.engine.api.dll
+C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\web.config
+C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\Castle.Core.dll
+C:\_src\maraboustork\Deployment-Configuration-Example\Deployment-Configuration-Example.Tests\bin\Debug\netcoreapp3.0\Moq.dll
