@@ -19,11 +19,7 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '3.x'
-    
+-    
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
