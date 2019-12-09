@@ -23,10 +23,9 @@ namespace Deployment_Configuration_Example.Controllers
         {
             var message = _config.GetValue<String>("TheMessage");
 
-            var connectionString = _config
-                                        .GetSection("ANestedSetting")
-                                        .GetValue<String>("DatabaseConnection");
-              
+            var nestedSection = _config.GetSection("ANestedSetting");
+            var connectionString = nestedSection != null ? nestedSection.GetValue<String>("DatabaseConnection") : null;
+                          
             return new
             {
                 message = message,
