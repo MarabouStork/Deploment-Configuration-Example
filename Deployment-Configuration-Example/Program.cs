@@ -18,6 +18,11 @@ namespace Deployment_Configuration_Example
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+                    config.AddLegacyWebConfigFile("web.config", optional: false, reloadOnChange: false);
+                    config.Build();
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

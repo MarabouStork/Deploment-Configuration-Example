@@ -25,11 +25,24 @@ namespace Deployment_Configuration_Example.Controllers
 
             var nestedSection = _config.GetSection("ANestedSetting");
             var connectionString = nestedSection != null ? nestedSection.GetValue<String>("DatabaseConnection") : null;
-                          
+
+            var legacySettingA = _config.GetValue<String>("SettingA");
+            var legacyConnectionString = _config.GetValue<String>("ConnectionStrings:LegacyConnectionString");
+
+
             return new
             {
-                message = message,
-                connectionString = connectionString, 
+                appSettings_json = new {
+                    message = message,
+                    connectionString = connectionString, 
+                }, 
+
+                web_config = new
+                {
+                    setting = legacySettingA, 
+                    connectionString = legacyConnectionString
+                },
+
                 lastUpdated = DateTime.Now.ToUniversalTime()
             };
         }
