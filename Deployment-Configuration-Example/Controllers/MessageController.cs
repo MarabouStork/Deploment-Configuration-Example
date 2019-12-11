@@ -21,15 +21,11 @@ namespace Deployment_Configuration_Example.Controllers
         [HttpGet]
         public Object Get()
         {
-            var message = _config.GetValue<String>("TheMessage");
-
-            var nestedSection = _config.GetSection("ANestedSetting");
-            var connectionString = nestedSection != null ? nestedSection.GetValue<String>("DatabaseConnection") : null;
-
-            var legacySettingA = _config.GetValue<String>("SettingA");
-            var legacyConnectionString = _config.GetValue<String>("ConnectionStrings:LegacyConnectionString");
-
-
+            var message = _config.GetValue<String?>("TheMessage", null);
+            var connectionString = _config.GetValue<String?>("ANestedSetting:DatabaseConnection", null);
+            var legacySettingA = _config.GetValue<String?>("SettingA", null);
+            var legacyConnectionString = _config.GetValue<String?>("ConnectionStrings:LegacyConnectionString", null);
+                       
             return new
             {
                 appSettings_json = new {

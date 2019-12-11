@@ -5,6 +5,7 @@ using Moq;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Dynamic;
 
 namespace Deployment_Configuration_Example.Tests
@@ -13,12 +14,10 @@ namespace Deployment_Configuration_Example.Tests
     {
         Mock<ILogger<MessageController>> _logger;
         Mock<IConfiguration> _config;
-        Mock<IConfigurationSection> _configSection;
 
         [SetUp]
         public void Setup()
         {
-            _configSection = new Mock<IConfigurationSection>();
             _config = new Mock<IConfiguration>();
             _logger = new Mock<ILogger<MessageController>>();
         }
@@ -27,14 +26,27 @@ namespace Deployment_Configuration_Example.Tests
         public void Get_ToTestStandardMessageResponse_RespondsWithMockedMessage()
         {
             // Arrange
-            _config.Setup(c => c.GetSection("TheMessage")).Returns(_configSection.Object);
-            _configSection.Setup(cs => cs.Value).Returns("This is a test");
+            var attribTheMessage = new Mock<IConfigurationSection>();
+            attribTheMessage.Setup(c => c.Value).Returns("Test Value A");
+
+            var attribConnectionString = new Mock<IConfigurationSection>();
+            attribConnectionString.Setup(c => c.Value).Returns("Test Connection String A");
+
+            var attribSettingA = new Mock<IConfigurationSection>();
+            attribSettingA.Setup(c => c.Value).Returns("Test Value B");
+
+            var attribLegacyConnectionString = new Mock<IConfigurationSection>();
+            attribLegacyConnectionString.Setup(c => c.Value).Returns("Test Connection String B");
+
+            _config.Setup(c => c.GetSection("TheMessage")).Returns(attribTheMessage.Object);
+            _config.Setup(c => c.GetSection("ANestedSetting:DatabaseConnection")).Returns(attribConnectionString.Object);
+            _config.Setup(c => c.GetSection("SettingA")).Returns(attribSettingA.Object);
+            _config.Setup(c => c.GetSection("ConnectionStrings:LegacyConnectionString")).Returns(attribLegacyConnectionString.Object);
 
             var controller = new MessageController(_logger.Object, _config.Object);
 
             // Act
             var response = controller.Get();
-
 
             // Assert
             Assert.IsNotNull(response);
@@ -44,8 +56,17 @@ namespace Deployment_Configuration_Example.Tests
                 var str = JsonConvert.SerializeObject(response);
                 dynamic dynResponse = JsonConvert.DeserializeObject(str);
 
-                Assert.IsNotNull(dynResponse.message);
-                Assert.AreEqual("This is a test", dynResponse.message.Value);
+                Assert.IsNotNull(dynResponse.appSettings_json.message);
+                Assert.AreEqual("Test Value A", dynResponse.appSettings_json.message.Value);
+
+                Assert.IsNotNull(dynResponse.appSettings_json.connectionString);
+                Assert.AreEqual("Test Connection String A", dynResponse.appSettings_json.connectionString.Value);
+
+                Assert.IsNotNull(dynResponse.web_config.setting);
+                Assert.AreEqual("Test Value B", dynResponse.web_config.setting.Value);
+
+                Assert.IsNotNull(dynResponse.web_config.connectionString);
+                Assert.AreEqual("Test Connection String B", dynResponse.web_config.connectionString.Value);
 
             }
             catch (Exception ex)
