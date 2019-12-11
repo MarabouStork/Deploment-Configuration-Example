@@ -38,18 +38,18 @@ steps:
     versionSelector: 'latestStable'
 
 - task: VSTest@2
- inputs:
-   testSelector: 'testAssemblies'
-   testAssemblyVer2: '**\*test*.dll'
-   searchFolder: '$(System.DefaultWorkingDirectory)'
-   vsTestVersion: '16.0'
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: '**\*test*.dll'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    vsTestVersion: '16.0'
 
-# - task: VSTest@2
-#   inputs:
-#     testSelector: 'testAssemblies'
-#     testAssemblyVer2: '**\*test*.dll'
-#     searchFolder: '$(Build.StagingDirectory)'
-#     vsTestVersion: '16.0'
+#- task: VSTest@2
+#  inputs:
+#    testSelector: 'testAssemblies'
+#    testAssemblyVer2: '**\*test*.dll'
+#    searchFolder: '$(Build.StagingDirectory)'
+#    vsTestVersion: '16.0'
 
 - task: PublishBuildArtifacts@1
 
