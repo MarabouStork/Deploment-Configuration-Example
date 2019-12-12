@@ -41,7 +41,7 @@ steps:
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
-    testAssemblyVer2: '**\*.tests.dll'
+    testAssemblyVer2: '**\bin\**\*.tests.dll'
     searchFolder: '$(System.DefaultWorkingDirectory)'
     vsTestVersion: '16.0'
     otherConsoleOptions: '/Framework:.NETCoreApp,Version=v3.0'
